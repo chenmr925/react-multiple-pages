@@ -1,0 +1,11 @@
+@import "common";
+.App-wrap {
+    background-color: green;
+    .App-logo {
+        font-size: $fontSize;
+        border: $border;
+    }
+    &:hover {
+        opacity: 0.5;
+    }
+}
