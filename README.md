@@ -2,8 +2,8 @@
 
 ## installation
 ```
-mkdir demo & cd demo
 git clone https://github.com/chenmr925/react-multiple-pages.git
+cd react-multiple-pages
 yarn install
 yarn start
 ```
