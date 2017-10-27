@@ -33,13 +33,16 @@ const config = {
         ignored: /node_modules/
     },
     devServer: {
-        port: 8888,
+        port: 8889,
         inline: true,//实时刷新
         hot: true,
         compress: true,
+        historyApiFallback: true,
         contentBase: [path.join(__dirname, "dist"), ],
         proxy: {
-            "/resumeCloud/": "http://www.jianliyun.me/"
+            "/wecruit/": "http://192.168.0.178:8099",
+            "/login": "http://192.168.0.178:8099",
+            changeOrigin: true
         }
     }
 };

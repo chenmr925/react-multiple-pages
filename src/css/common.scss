@@ -1,7 +1,10 @@
 /*常用变量*/
 $fontSize: 100px;
 $backColor: #f1f1f1;
+$borderColor: #f6f6f6;
 $green: #0cb820;
+$brown1: #fdbd2f;
+$brown2: #ffb637;
 
 /*自适应*/
 @media screen and (min-width:319px) and (max-width: 374px) {
@@ -54,6 +57,7 @@ input,button,textarea {
 	margin:0;
 	padding:0;
 	font-size:1em;
+    outline: none;
 	line-height:1em;
 	-webkit-appearance:none;
 	background-color:rgba(0, 0, 0, 0);
@@ -102,4 +106,8 @@ html,body{
 
 .none {
     display: none;
+}
+
+.highlight {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
