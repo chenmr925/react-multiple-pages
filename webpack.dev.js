@@ -38,11 +38,9 @@ const config = {
         hot: true,
         compress: true,
         historyApiFallback: true,
-        contentBase: [path.join(__dirname, "dist"), ],
         proxy: {
             "/wecruit/": "http://192.168.0.178:8099",
             "/login": "http://192.168.0.178:8099",
-            changeOrigin: true
         }
     }
 };
