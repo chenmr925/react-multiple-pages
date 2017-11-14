@@ -28,6 +28,18 @@ const config = {
                     // use style-loader in development
                     fallback: "style-loader"
                 })
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|ico)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                            name: "./img/[name].[ext]?[hash]"
+                        }
+                    }
+                ]
             }
         ]
     },

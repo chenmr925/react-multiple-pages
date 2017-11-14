@@ -17,18 +17,6 @@ const config = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: 'babel-loader'
-            },
-            {
-                test: /\.(png|jpg|jpeg|gif|ico)$/i,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 8192,
-                            name: "./img/[name].[ext]?[hash]"
-                        }
-                    }
-                ]
             }
         ]
     },

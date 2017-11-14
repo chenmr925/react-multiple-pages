@@ -20,6 +20,18 @@ const config = {
                         loader: "sass-loader"
                     }
                 ]
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|ico)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10,
+                            name: "./img/[name].[ext]?[hash]"
+                        }
+                    }
+                ]
             }
         ]
     },
