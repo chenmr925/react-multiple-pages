@@ -7,7 +7,7 @@ const merge = require('webpack-merge');
 const baseConfig = require('./build/webpack.base');
 const buildConfig = require('./build/build.config');
 
-const extractSass = new ExtractTextPlugin({
+const extractSassAndLess = new ExtractTextPlugin({
     filename: "css/[name].css",
 });
 
@@ -16,7 +16,7 @@ const config = {
         rules: [
             {
                 test: /\.(css|scss)$/,
-                use: extractSass.extract({
+                use: extractSassAndLess.extract({
                     use: [{
                         loader: "css-loader",
                         options: {
@@ -24,6 +24,21 @@ const config = {
                         }
                     }, {
                         loader: "sass-loader"
+                    }],
+                    // use style-loader in development
+                    fallback: "style-loader"
+                })
+            },
+            {
+                test: /\.less$/,
+                use: extractSassAndLess.extract({
+                    use: [{
+                        loader: "css-loader",
+                        options: {
+                            minimize: true
+                        }
+                    }, {
+                        loader: "less-loader"
                     }],
                     // use style-loader in development
                     fallback: "style-loader"
@@ -46,7 +61,7 @@ const config = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new UglifyJSPlugin(),
-        extractSass
+        extractSassAndLess
     ]
 };
 

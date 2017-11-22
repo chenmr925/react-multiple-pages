@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require("webpack");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = {
     entry: {
@@ -7,24 +8,25 @@ const config = {
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
-        publicPath: '/',
+        publicPath: './',
         filename: 'js/[name].js'
     },
-    externals: {jquery: "jQuery"},
     module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: 'babel-loader'
-            }
-        ]
+        rules: [{
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: 'babel-loader'
+        }]
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: "vendor",
             minChunks: Infinity
-        })
+        }),
+        new CopyWebpackPlugin([{
+            from: './public/favicon.ico',
+            to: './favicon.ico'
+        }])
     ],
 }
 
