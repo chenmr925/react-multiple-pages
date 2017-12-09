@@ -56,14 +56,13 @@ const config = {
         ignored: /node_modules/
     },
     devServer: {
-        port: 8889,
+        port: 8888,
         inline: true,//实时刷新
         hot: true,
         compress: true,
         historyApiFallback: true,
         proxy: {
             "/wecruit/": "http://192.168.0.178:8099",
-            "/login": "http://192.168.0.178:8099",
         }
     }
 };
