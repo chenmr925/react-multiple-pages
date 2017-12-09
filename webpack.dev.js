@@ -1,5 +1,4 @@
 const path = require('path');
-const HotModuleReplacementPlugin = require('react-hot-loader');
 const webpack = require("webpack");
 const merge = require('webpack-merge');
 const baseConfig = require('./build/webpack.base');
